@@ -465,7 +465,8 @@ var ajax = ajaxObject();
         if( ajax.readyState == 4 ) {
             if( ajax.status == 200 ) {
 			swal.close()
-            hpp_replace_mark(ajax.responseText)
+            let text = ajax.responseText.replace("{{ date }}",new Date().format("yyyy-MM-dd hh:mm:ss"));
+            hpp_replace_mark(text)
             }
             else {
 			swal.close()

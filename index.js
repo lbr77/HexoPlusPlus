@@ -1,11 +1,11 @@
-//const md5=require ('md5')
+const md5=require ('md5')
 
 //开发者请将上述依赖注释去除
 
 const hpp_CDNver = "d4051c3"
 const hpp_ver = "HexoPlusPlus@1.2.0"
 const dev_mode_branch = "dist"
-let hpp_logstatus = 0
+let hpp_logstatus = 1
 
 
 function getJsonLength(jsonData) {
@@ -48,9 +48,11 @@ async function handleRequest(request) {
     const urlObj = new URL(urlStr)
     const path = urlObj.href.substr(urlObj.origin.length)
     const domain = (urlStr.split('/'))[2]
-    const username = hpp_username.split(",");
-    const password = hpp_password.split(",");
-    //console.log(hpp_logstatus)
+    // const username = hpp_username.split(",");
+    // const password = hpp_password.split(",");
+    const username = "lbr".split(",");
+    const password = "lbr77".split(",");
+    console.log(hpp_logstatus)
     for (var i = 0; i < getJsonLength(username); i++) {
       if (getCookie(request, "password") == md5(password[i]) && getCookie(request, "username") == md5(username[i])) {
         hpp_logstatus = 1
@@ -947,7 +949,11 @@ ${hpp_js}
             return (fetch(`https://raw.githubusercontent.com/${hpp_githubdocusername}/${hpp_githubdocrepo}/${hpp_githubdocbranch}${githubdocpath}${filename}?ref=${hpp_githubdocbranch}`, hpp_githubgetdocinit))
           }
 		  if (path == ("/hpp/admin/api/getscaffolds")) {
-            return (fetch(`https://raw.githubusercontent.com/${hpp_githubdocusername}/${hpp_githubdocrepo}/${hpp_githubdocbranch}${hpp_githubdocroot}scaffolds/post.md?ref=${hpp_githubdocbranch}`, hpp_githubgetdocinit))
+            let modefile = fetch(`https://raw.githubusercontent.com/${hpp_githubdocusername}/${hpp_githubdocrepo}/${hpp_githubdocbranch}${hpp_githubdocroot}scaffolds/post.md?ref=${hpp_githubdocbranch}`, hpp_githubgetdocinit)
+            .then(res => {
+              console.log(res.body);
+            });
+            return modefile;
           }
           //他名字叫bfs，他就叫bfs/doge
           async function fetch_bfs(arr, url, getinit) {
