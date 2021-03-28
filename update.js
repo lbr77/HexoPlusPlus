@@ -1,5 +1,5 @@
 function hpp_update(){
-swal({title: "\n更新中...",icon: "https://cdn.jsdelivr.net/gh/HexoPlusPlus/CDN@db63c79/loading.gif",text:"\n",button: false,closeModal: false,});
+swal({title: "\n更新中...",icon: "https://cdn.jsdelivr.net/gh/lbr77/CDN@db63c79/loading.gif",text:"\n",button: false,closeModal: false,});
 var ajax = ajaxObject();
     ajax.open( "get" , '/hpp/admin/api/update' , true );
     ajax.setRequestHeader( "Content-Type" , "text/plain" );

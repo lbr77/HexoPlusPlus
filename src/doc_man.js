@@ -133,7 +133,7 @@ function del(name){
 });
 	}
 function delfile(name){
-	swal({title: "\n删除中...",icon: "https://cdn.jsdelivr.net/gh/HexoPlusPlus/CDN@db63c79/loading.gif",text:"\n",button: false,closeModal: false,});
+	swal({title: "\n删除中...",icon: "https://cdn.jsdelivr.net/gh/lbr77/CDN@db63c79/loading.gif",text:"\n",button: false,closeModal: false,});
 	var ajax = ajaxObject();
     ajax.open( "GET" , '/hpp/admin/api/deldoc/'+name , true );
     ajax.setRequestHeader( "Content-Type" , "text/plain" );
@@ -185,7 +185,7 @@ function del_dr(name){
 });
 	}
 function deldraft(name){
-	swal({title: "\n删除中...",icon: "https://cdn.jsdelivr.net/gh/HexoPlusPlus/CDN@db63c79/loading.gif",text:"\n",button: false,closeModal: false,});
+	swal({title: "\n删除中...",icon: "https://cdn.jsdelivr.net/gh/lbr77/CDN@db63c79/loading.gif",text:"\n",button: false,closeModal: false,});
 	var ajax = ajaxObject();
     ajax.open( "GET" , '/hpp/admin/api/deldraft/'+name , true );
     ajax.setRequestHeader( "Content-Type" , "text/plain" );
